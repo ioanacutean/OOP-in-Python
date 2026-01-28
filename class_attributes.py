@@ -5,6 +5,16 @@ class User:
         self.name = name
         self.email = email
 
+    def __comparable(self):
+        #dictionary comprehension
+        return {key: value.lower() for key, value in self.__dict__.items()}
+
+    def __eq__(self, other):
+        return self.__comparable() == other.__comparable()
+
+    def __ne__(self, other):
+        return self.__comparable() != other.__comparable()
+
     def activate(self):
         if not self.is_active():
             self.__class__.active_users.append(self)
@@ -35,3 +45,9 @@ print(me.__dict__)
 print(dir(me))
 print(dir(User))
 print(help(me))
+
+user1 = User('Ana', 'ana@gmail.com')
+user2 = User('Vlad', 'vlad@gmail.com')
+print(user1 == user2)
+print(user1 == user1)
+print(user1 != user2)
