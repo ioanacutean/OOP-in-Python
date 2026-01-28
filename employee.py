@@ -48,7 +48,7 @@ class Employee:
 
     @salary.setter
     def salary(self, new_salary):
-        if new_salary < Employee.minimum_wage:
+        if new_salary < self.__class__.minimum_wage:
             raise ValueError('Minimum wage is $1000')
         self._salary = new_salary
         self._annual_salary = None
