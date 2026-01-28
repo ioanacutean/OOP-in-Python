@@ -1,4 +1,22 @@
+from datetime import date
+
+
 class Employee:
+    minimum_wage = 1000         # class attribute
+
+    @classmethod
+    def change_minimum_wage(cls, new_wage):
+        if new_wage > 3000:
+            raise ValueError('Company is bankrupt.')
+        cls.minimum_wage = new_wage
+
+    @classmethod
+    #calculate the age from date of birth and instantiates the employee with default value from salary
+    def new_employee(cls, name, dob):
+        now = date.today()
+        age = now.year - dob.year - ((now.month, now.day) < (dob.month, dob.day))
+        return cls(name, age, cls.minimum_wage)
+
     def __init__(self, fname, lname, age, position, salary):
         self.first_name = fname
         self.last_name = lname
@@ -30,7 +48,7 @@ class Employee:
 
     @salary.setter
     def salary(self, new_salary):
-        if new_salary < 1000:
+        if new_salary < Employee.minimum_wage:
             raise ValueError('Minimum wage is $1000')
         self._salary = new_salary
         self._annual_salary = None
@@ -40,3 +58,8 @@ class Employee:
         if self._annual_salary is None:
             self._annual_salary = self.salary * 12
         return self._annual_salary
+
+print(Employee.minimum_wage)
+Employee.change_minimum_wage(500)
+print(Employee.minimum_wage)
+
