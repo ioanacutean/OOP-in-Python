@@ -30,3 +30,8 @@ print('Active:', me.is_active(), 'Active users:', User.active_users)
 print('Active users of "me":', me.active_users, 'Class Level: ', User.active_users)
 me.active_users = "Just me"
 print('Active users of "me":', me.active_users, 'Class Level: ', User.active_users)
+
+print(me.__dict__)
+print(dir(me))
+print(dir(User))
+print(help(me))
