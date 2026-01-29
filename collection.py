@@ -1,6 +1,6 @@
 from books import Book
 
-class Collection():
+class Collection:
     def __init__(self, books_collection = []):
         self.books_collection = books_collection
 
@@ -50,10 +50,10 @@ class Collection():
             print(book)
 
 
-book1 = Book("Crima din Orient Express", "Agatha Christie", 1934, "Crime", 35)
+book1 = Book("Murder on the Orient Express", "Agatha Christie", 1934, "Crime", 35)
 book2 = Book("Factfullness", "Hans Rosling", 2018, "Self-help", 50)
 book3 = Book("factfullness", "Hans Rosling", 2021, "Self-help", 60)
-book4 = Book("Libraria din Teheran", "Marjan Kamali", 2022, "Beletristica", 45)
+book4 = Book("The stationery shop of Teheran", "Marjan Kamali", 2022, "Beletristics", 45)
 
 collection = Collection()
 collection.add_book(book1)
