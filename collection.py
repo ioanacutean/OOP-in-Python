@@ -1,6 +1,7 @@
 from books import Book
 
 class Collection:
+
     def __init__(self, books_collection = []):
         self.books_collection = books_collection
 

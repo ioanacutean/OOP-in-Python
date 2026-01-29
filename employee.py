@@ -1,6 +1,5 @@
 from datetime import date
 
-
 class Employee:
     minimum_wage = 1000         # class attribute
 
@@ -62,4 +61,3 @@ class Employee:
 print(Employee.minimum_wage)
 Employee.change_minimum_wage(500)
 print(Employee.minimum_wage)
-

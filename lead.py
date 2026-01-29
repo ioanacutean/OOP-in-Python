@@ -1,4 +1,5 @@
 class Lead:
+
     def __init__(self, name, staff_size, estimated_revenue, effort_factor):
         self.name = name
         self.staff_size = staff_size
@@ -6,17 +7,16 @@ class Lead:
         self.effort_factor = effort_factor
 
     @classmethod
-    def get_digits_in(cls, element):
+    def get_nr_of_digits(cls, element):
         nr_digits = 0
         while element > 0:
             nr_digits += 1
             element //= 10
         return nr_digits
 
-
     def calculate_lead_score(self):
-        digits_in_revenue = self.get_digits_in(self.estimated_revenue)
-        digits_in_staff_size = self.get_digits_in(self.staff_size)
+        digits_in_revenue = self.get_nr_of_digits(self.estimated_revenue)
+        digits_in_staff_size = self.get_nr_of_digits(self.staff_size)
         return 1 / (self.staff_size / self.estimated_revenue * (10 ** (digits_in_revenue - digits_in_staff_size)) * self.effort_factor)
 
     def __eq__(self, other):

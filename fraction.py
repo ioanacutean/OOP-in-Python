@@ -1,4 +1,5 @@
 class Fraction:
+
     def __init__(self, numerator, denominator):
         self.numerator = numerator
         self.denominator = denominator
@@ -55,4 +56,3 @@ f4 = Fraction(5, 4)
 f3.subtract(f4)
 print(f3)
 print(f4)
-
