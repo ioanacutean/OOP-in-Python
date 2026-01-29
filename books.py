@@ -66,5 +66,4 @@ class Book:
             self._price = value
 
     def __str__(self):
-
         return f"The {self.genre} book {self.title} by {self.author} published in {self.publication_year} costs {self.price} lei."
