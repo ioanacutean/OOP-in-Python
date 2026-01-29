@@ -2,6 +2,7 @@ from student_class import Student
 
 class Gradebook:
     students = []
+
     def __init__(self, capacity):
         self.capacity = capacity
 
@@ -35,17 +36,22 @@ class Gradebook:
         return top_student
 
 gradebook = Gradebook(2)
+
 # Create Student objects
 s1 = Student("Alice", [85, 90, 78])
 s2 = Student("Bob", [92, 88, 95])
 s3 = Student("Charlie", [70, 75, 80])
+
 # Add students individually
 gradebook.add_student(s1)
 gradebook.add_student(s2)
+
 # Attempt to add another student
 gradebook.add_student(s3) # Should print a message indicating the gradebook is full
+
 # Display all students
 gradebook.display_all_students()
+
 # Calculate and display class average
 print(f"Class Average: {gradebook.calculate_class_average():.2f}")
 # Find and display the top student
